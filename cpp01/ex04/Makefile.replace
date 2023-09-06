@@ -1,0 +1,18 @@
+TEST =		replace
+CC =		c++
+CFLAGS =	-Wall -Werror -Wextra -std=c++98
+SRC =		main.cpp
+
+all: $(TEST)
+
+$(TEST): $(SRC)
+	$(CC) $(CFLAGS) $(SRC) -o $(TEST)
+
+clean:
+	rm -f $(TEST)
+
+fclean: clean
+
+re: fclean all
+
+.PHONY: all clean fclean re

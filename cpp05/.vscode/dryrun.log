@@ -1,0 +1,6 @@
+make --dry-run --always-make --keep-going --print-directory
+make: Entering directory `/Users/bhoitzin/projects/cpp_modules/cpp05'
+make: Leaving directory `/Users/bhoitzin/projects/cpp_modules/cpp05'
+ 
+make: *** No targets specified and no makefile found.  Stop.
+

@@ -1,0 +1,60 @@
+#include "../inc/Animal.hpp"
+
+//CONSTRUCTORS
+//DEFAULT
+Animal::Animal( void ) { std::cout << "Default Animal constructor called" << std::endl; };
+//WITH STRING
+Animal::Animal( std::string type ) : AnimalType(type)
+{ 
+	std::cout << "String Animal Constructor called" << std::endl; 
+}
+//COPY
+Animal::Animal( Animal const & src )
+{ 
+	std::cout << "Animal Copy constructor called" << std::endl; 
+	*this = src;
+}
+//ASSIGNMENT =
+Animal & Animal::operator=( Animal const & src ) 
+{
+	std::cout << "Animal Assignment operator called" << std::endl; 
+	this->AnimalType = src.AnimalType;
+	return (*this);
+}
+//DESTRUCTOR
+Animal::~Animal( void ){ std::cout << "Animal Destructor called" << std::endl; }
+//GET / SET TYPE
+void		Animal::setType( std::string type ) { this->AnimalType = type; }
+std::string Animal::getType( void ) const { return (AnimalType); }
+
+//----------------------------------------------
+//		WRONG	ANIMAL
+//
+//----------------------------------------------
+
+//CONSTRUCTORS
+//DEFAULT
+WrongAnimal::WrongAnimal( void ) { std::cout << "Default WrongAnimal constructor called" << std::endl; };
+//WITH STRING
+WrongAnimal::WrongAnimal( std::string type ) : AnimalType(type)
+{ 
+	std::cout << "String WrongAnimal Constructor called" << std::endl; 
+}
+//COPY
+WrongAnimal::WrongAnimal( WrongAnimal const & src )
+{ 
+	std::cout << "WrongAnimal Copy constructor called" << std::endl; 
+	*this = src;
+}
+//ASSIGNMENT =
+WrongAnimal & WrongAnimal::operator=( WrongAnimal const & src ) 
+{
+	std::cout << "WrongAnimal Assignment operator called" << std::endl; 
+	this->AnimalType 	= src.AnimalType;
+	return (*this);
+}
+//DESTRUCTOR
+WrongAnimal::~WrongAnimal( void ){ std::cout << "WrongAnimal Destructor called" << std::endl; }
+//GET / SET TYPE
+void		WrongAnimal::setType( std::string type ) { this->AnimalType = type; }
+std::string WrongAnimal::getType( void ) const { return (AnimalType); }
